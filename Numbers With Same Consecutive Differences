@@ -1,0 +1,16 @@
+class Solution:
+    def numsSameConsecDiff(self, n: int, k: int) -> List[int]:
+        s=[]
+        j=10**(n-1)
+        e=10**(n)
+        for i in range(j,e):
+            count=0
+            l=str(i)
+            for m in range(len(l)-1):
+                p=int(l[m])
+                q=int(l[m+1])
+                if abs(p-q)==k:
+                    count=count+1
+            if count==n-1:
+                s.append(i)
+        return(s) 
